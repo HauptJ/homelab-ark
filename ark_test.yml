@@ -1,0 +1,8 @@
+---
+- name: Docker Ark Playbook
+  vars:
+    ark_dir: '/shredder_pool/ark'
+  hosts: ark
+  roles:
+    - swarm
+    - ark

@@ -1,10 +1,4 @@
 ---
-# If built in molecule, user will be 'ubuntu'
-# install docker swarm first
-
-- include_tasks: vagrant_swarm.yml
-  when:
-    - ansible_user_id == 'ubuntu'
 
 # ark will run with user:group 1000:1000 in the docker container itself,
 # so I'm using that user:group for the volume as well.

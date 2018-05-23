@@ -1,0 +1,23 @@
+---
+- name: Install Docker on Ubuntu
+  include_tasks: ubuntu.yml
+  become: true
+  when: ansible_distribution == "Ubuntu"
+
+- name: Install Docker on CentOS
+  include_tasks: centos.yml
+  become: true
+  when: ansible_distribution == "CentOS"
+
+- name: determine swarm status
+  become: true
+  shell: >
+    docker info | egrep '^Swarm: ' | cut -d ' ' -f2
+  register: swarm_status
+
+- name: initialize swarm cluster
+  become: true
+  shell: >
+    docker swarm init
+    --advertise-addr={{ ansible_default_ipv4.address | default('eth0') }}:2377
+  when: "'inactive' in swarm_status.stdout_lines"

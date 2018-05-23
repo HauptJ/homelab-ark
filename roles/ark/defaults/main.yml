@@ -1,0 +1,11 @@
+---
+# defaults file for ark
+ark_dir: /ark
+
+# Ark Island
+ark_island_sessionname: Homelab TheIsland
+ark_island_servermap: TheIsland
+
+# Ark Aberration
+ark_aberration_sessionname: Homelab Aberration
+ark_aberration_servermap: Aberration_P

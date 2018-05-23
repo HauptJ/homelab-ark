@@ -1,8 +1,7 @@
 ---
-- name: playbook
+- name: Docker Ark Playbook
   vars:
     ark_dir: '/shredder_pool/ark'
-  hosts: all
+  hosts: ark
   roles:
     - role: ark
-

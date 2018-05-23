@@ -1,0 +1,8 @@
+# Ansible Inventory file
+
+[ark_dev]
+localhost
+
+[local:vars]
+ansible_connection=local
+ansible_user=root

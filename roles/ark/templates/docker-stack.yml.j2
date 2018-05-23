@@ -5,8 +5,8 @@ services:
   island:
     image: turzam/ark
     environment:
-      SESSIONNAME: Homelab TheIsland
-      SERVERMAP: TheIsland
+      SESSIONNAME: {{ ark_island_sessionname }}
+      SERVERMAP: {{ ark_island_servermap }}
       SERVERPASSWORD: "${SERVERPASSWORD}"
       ADMINPASSWORD: "${ADMINPASSWORD}"
       BACKUPONSTART: 1
@@ -26,8 +26,8 @@ services:
   aberration:
     image: turzam/ark
     environment:
-      SESSIONNAME: Homelab Aberration
-      SERVERMAP: Aberration_P
+      SESSIONNAME: {{ ark_aberration_sessionname }}
+      SERVERMAP: {{ ark_aberration_servermap }}
       SERVERPASSWORD: "${SERVERPASSWORD}"
       ADMINPASSWORD: "${ADMINPASSWORD}"
       SERVERPORT: 27016
